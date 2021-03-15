@@ -1,10 +1,7 @@
-module.exports = function makeGetSimilarCollege({ readSimilarCollege }) {
-  return async function getSimilarCollege(httpRequest) {
-    const info = httpRequest.body;
-
+module.exports = function makeGetAllCollege({ readAllCollege }) {
+  return async function getAllCollege() {
     try {
-      const read = await readSimilarCollege(info);
-
+      const read = await readAllCollege();
       return {
         headers: {
           "Content-Type": "application/json",
@@ -13,7 +10,6 @@ module.exports = function makeGetSimilarCollege({ readSimilarCollege }) {
         body: read,
       };
     } catch (e) {
-      console.log(e);
       return {
         headers: {
           "Content-Type": "application/json",

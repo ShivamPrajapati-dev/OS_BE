@@ -4,6 +4,7 @@ const {
   readCollegeByState,
   readCollegeOfState,
   readCollegeOfCourse,
+  readAllCollege,
   readSimilarCollege,
   readCollegeStudent,
   readStudent,
@@ -16,6 +17,7 @@ const makeGetSimilarCollege = require("./college/get-similar-college");
 const makeGetCollegeByState = require("./college/get-college-by-state");
 const makeGetCollegeOfState = require("./college/get-college-of-state");
 const makeReadCollegeOfCourse = require("./college/get-college-of-course");
+const makeGetAllCollege = require("./college/get-all-college");
 
 const getCollegeById = makeGetCollegeById({ readCollegeById });
 const getCollegeByCourses = makeGetCollegeByName({ readCollegeByCourses });
@@ -23,6 +25,7 @@ const getSimilarCollege = makeGetSimilarCollege({ readSimilarCollege });
 const getCollegeByState = makeGetCollegeByState({ readCollegeByState });
 const getCollegeOfState = makeGetCollegeOfState({ readCollegeOfState });
 const getCollegeOfCourse = makeReadCollegeOfCourse({ readCollegeOfCourse });
+const getAllCollege = makeGetAllCollege({ readAllCollege });
 
 //for student
 const makeGetStudent = require("./student/get-student");
@@ -37,6 +40,7 @@ module.exports = {
   getCollegeByState,
   getCollegeOfState,
   getCollegeOfCourse,
+  getAllCollege,
   getSimilarCollege,
   getStudent,
   getCollegeStudent,

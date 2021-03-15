@@ -2,7 +2,7 @@ const { makeCollege } = require("../../entities");
 module.exports = function makeReadCollegeOfState({ College }) {
   return async function readCollegeOfState(info) {
     const college = makeCollege(info);
-    console.log(info, "adasd");
+
     if (!college.getState()) {
       throw new Error("Must provide college state");
     }

@@ -11,6 +11,7 @@ const {
   getCollegeByState,
   getCollegeOfState,
   getCollegeOfCourse,
+  getAllCollege,
   getSimilarCollege,
   getStudent,
   getCollegeStudent,
@@ -28,6 +29,7 @@ app.post("/getcollegebyid", makeCallback(getCollegeById));
 app.post("/getcollegebystate", makeCallback(getCollegeByState));
 app.post("/getcollegeofstate", makeCallback(getCollegeOfState));
 app.post("/getcollegeofcourse", makeCallback(getCollegeOfCourse));
+app.post("/getallcollege", makeCallback(getAllCollege));
 
 app.post("/getcollegebycourses", makeCallback(getCollegeByCourses));
 app.post("/getsimilarcollege", makeCallback(getSimilarCollege));

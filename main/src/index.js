@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-
+const port = process.env.PORT || 8000;
 const mongoose = require("mongoose");
 
 const {
@@ -44,8 +44,8 @@ mongoose
     useUnifiedTopology: true,
   })
   .then((result) => {
-    app.listen(8000, () => {
-      console.log("Server is up on port 8000");
+    app.listen(port, () => {
+      console.log(`Server is up on port ${port}`);
     });
   })
   .catch((e) => {

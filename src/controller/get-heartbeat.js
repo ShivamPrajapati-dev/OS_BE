@@ -1,7 +1,7 @@
 module.exports = function makeGetHeartbeat({ sendHeartbeat }) {
-  return function getHeartbeat() {
+  return async function getHeartbeat() {
     try {
-      const read = sendHeartbeat();
+      const read = await sendHeartbeat();
       return {
         headers: {
           "Content-Type": "application/json",

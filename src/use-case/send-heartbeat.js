@@ -1,7 +1,7 @@
 module.exports = function makeSendHeartbeat() {
   return function sendHeartbeat() {
-    return {
+    return Promise.resolve({
       msg: "I am Alive",
-    };
+    });
   };
 };

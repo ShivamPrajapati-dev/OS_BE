@@ -1,4 +1,5 @@
 const {
+  sendHeartbeat,
   readCollegeById,
   readCollegeByCourses,
   readCollegeByState,
@@ -10,6 +11,8 @@ const {
   readStudent,
 } = require("../use-case");
 
+const makeGetHeartbeat = require("./get-heartbeat");
+const getHeartbeat = makeGetHeartbeat({ sendHeartbeat });
 //for college
 const makeGetCollegeById = require("./college/get-college-by-id");
 const makeGetCollegeByName = require("./college/get-college-by-courses");
@@ -35,6 +38,7 @@ const getStudent = makeGetStudent({ readStudent });
 const getCollegeStudent = makeGetCollegeStudent({ readCollegeStudent });
 
 module.exports = {
+  getHeartbeat,
   getCollegeById,
   getCollegeByCourses,
   getCollegeByState,

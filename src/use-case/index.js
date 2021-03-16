@@ -1,6 +1,8 @@
 const College = require("../model/college");
 const Student = require("../model/student");
 
+const makeSendHeartbeat = require("./send-heartbeat");
+const sendHeartbeat = makeSendHeartbeat();
 //for college
 const makeReadCollegeById = require("./college/read-college-by-id");
 const makeReadCollegeByName = require("./college/read-college-by-courses");
@@ -26,6 +28,7 @@ const readStudent = makeReadStudent({ Student });
 const readCollegeStudent = makeReadCollegeStudent({ Student });
 
 module.exports = {
+  sendHeartbeat,
   readCollegeById,
   readCollegeByCourses,
   readCollegeByState,

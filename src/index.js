@@ -6,6 +6,7 @@ const port = process.env.PORT || 8000;
 const mongoose = require("mongoose");
 
 const {
+  getHeartbeat,
   getCollegeById,
   getCollegeByCourses,
   getCollegeByState,
@@ -24,6 +25,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
+app.get("/getheartbeat", makeCallback(getHeartbeat));
 //for college
 app.post("/getcollegebyid", makeCallback(getCollegeById));
 app.post("/getcollegebystate", makeCallback(getCollegeByState));
